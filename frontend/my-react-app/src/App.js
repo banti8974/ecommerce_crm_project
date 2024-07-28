@@ -12,8 +12,8 @@ const App = () => {
 
     const handleMonthChange = (event) => {
         setSelectedMonth(event.target.value);
-        setSelectedMonthName(event.target.text);
-        // console.log(event.target, event.target.options[document.getElementById('test').selectedIndex].text);
+        setSelectedMonthName(event.target.options[parseInt(event.target.value) - 1].text);
+        // console.log(event.target, event.target.options[parseInt(event.target.value) - 1].text);
     };
 
     const handleSearchChange = (event) => {
@@ -35,7 +35,7 @@ const App = () => {
                         onChange={handleSearchChange}
                     />
                     <div>
-                    <label style={{ backgroundColor: 'red' }}>Select Month:</label>
+                        <label>Select Month:</label>
 
                         <select value={selectedMonth} onChange={handleMonthChange}>
                             <option value="01">January</option>
@@ -56,8 +56,8 @@ const App = () => {
             </div>
 
             <TransactionsTable selectedMonth={selectedMonth} search={search} page={page} setPage={setPage} />
-            <Statistics selectedMonth={selectedMonth} />
-            <BarChart selectedMonth={selectedMonth} />
+            <Statistics selectedMonth={selectedMonth} selectedMonthName={selectedMonthName} />
+            <BarChart selectedMonth={selectedMonth} selectedMonthName={selectedMonthName} />
         </div>
     );
 };

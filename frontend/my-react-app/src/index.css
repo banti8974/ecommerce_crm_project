@@ -33,15 +33,24 @@ tr:nth-child(even) {
 
 
 .homeInputContainer {
-  
   display: flex;
   justify-content: space-between;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+}
+
+.homeInputContainer label {
+  margin-right: 0.4rem;
+}
+
+.homeInputContainer select {
+  font-size: 1.2rem;
 }
 
 .transactionPaginationContainer {
-  
   display: flex;
   justify-content: space-between;
+  margin-top: 1.5rem;
 }
 
 .circle {
@@ -101,3 +110,5 @@ th, td {
   display: block;
     
 }
+
+

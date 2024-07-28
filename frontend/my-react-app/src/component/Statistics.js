@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchStatistics } from '../api';
 
-const Statistics = ({ selectedMonth }) => {
+const Statistics = ({ selectedMonth, selectedMonthName }) => {
     const [statistics, setStatistics] = useState({
         total_sale_amount: 0,
         total_sold_items: 0,
@@ -33,7 +33,7 @@ const Statistics = ({ selectedMonth }) => {
             <br/>
             <br/>
            
-           <h1 style={{ textAlign: 'center ' }}>Statistics</h1>
+           <h1 style={{ textAlign: 'center ' }}>Statistics - {selectedMonthName}</h1>
           
          
             <div className='statistics'>

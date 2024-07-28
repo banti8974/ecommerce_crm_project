@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Chart from 'chart.js/auto';
 import { fetchBarChartData } from '../api';
 
-const BarChart = ({ selectedMonth }) => {
+const BarChart = ({ selectedMonth, selectedMonthName }) => {
     // const [chartData, setChartData] = useState({});
     const chartRef = useRef(null);
     const [chartInstance, setChartInstance] = useState(null);
@@ -70,7 +70,7 @@ const BarChart = ({ selectedMonth }) => {
             <h1 style={{ textAlign: 'center ' }}>Transactions Bar Char</h1>
             
            
-            <h2 style={{ textAlign: 'center '}}>Bar Chart Stats -</h2>
+            <h2 style={{ textAlign: 'center '}}>Bar Chart Stats - {selectedMonthName}</h2>
             </div>
            <div className='barchart'>
            <canvas ref={chartRef} />
